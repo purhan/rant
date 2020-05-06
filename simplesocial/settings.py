@@ -27,9 +27,10 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+#DEBUG = True
+DEBUG = (os.environ.get('DEBUG_VALUE') == 'True')
 
-ALLOWED_HOSTS = ['rant-django.herokuapp.com']
+ALLOWED_HOSTS = ['rant-django.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
