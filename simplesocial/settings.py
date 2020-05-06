@@ -23,12 +23,12 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = 'eyin$ahrxi@j1%^=5-t6@#gs$k0y0!zn*8)ld@gjuo*s=3z5p$'
-SECRET_KEY = os.environ.get('SECRET_KEY')
+ SECRET_KEY = 'eyin$ahrxi@j1%^=5-t6@#gs$k0y0!zn*8)ld@gjuo*s=3z5p$'
+#SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-#DEBUG = True
-DEBUG = (os.environ.get('DEBUG_VALUE') == 'True')
+DEBUG = True
+#DEBUG = (os.environ.get('DEBUG_VALUE') == 'True')
 
 ALLOWED_HOSTS = ['rant-django.herokuapp.com', '127.0.0.1']
 
@@ -135,9 +135,9 @@ STATIC_URL = '/static/'
 LOGIN_REDIRECT_URL = 'test'
 LOGOUT_REDIRECT_URL = 'thanks'
 
-django_heroku.settings(locals())
+#django_heroku.settings(locals())
 
-SECURE_SSL_REDIRECT = True
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+#SECURE_SSL_REDIRECT = True
+#SESSION_COOKIE_SECURE = True
+#CSRF_COOKIE_SECURE = True
+#SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
