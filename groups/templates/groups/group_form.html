@@ -2,8 +2,9 @@
 {% load bootstrap4 %}
 
 {% block group_content %}
-<h4>Create A New Group</h4>
-  <form method="POST" action="{% url 'groups:create' %}" id="groupForm">
+<ul class="mx-auto list-group">
+<h4 class="list-group-item">Create A New Group</h4>
+  <form class="list-group-item" method="POST" action="{% url 'groups:create' %}" id="groupForm">
   	{% csrf_token %}
   	{% bootstrap_form form %}
   	<input type="submit" value="Create" class="btn btn-primary btn-large">

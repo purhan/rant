@@ -2,11 +2,17 @@
 
 {% load bootstrap4 %}
 
-{% block post_content %}
-<h4>Create New Post</h4>
-<form method="POST" action="{% url 'posts:create' %}" id="postForm">
-	{% csrf_token %}
-	{% bootstrap_form form %}
-	<input type="submit" value="Post" class="btn btn-primary btn-large">
-</form>
-{% endblock %}
+	{% block post_content %}
+	<ul class="mx-auto list-group">
+		<div class="list-group-item">
+			<h4 class="lead">Create New Post</h4>
+		</div>
+		<div class="list-group-item">
+			<form method="POST" action="{% url 'posts:create' %}" id="postForm">
+				{% csrf_token %}
+				{% bootstrap_form form %}
+				<input type="submit" value="Post" class="btn btn-primary btn-large">
+			</form>
+		</div>
+	</ul>
+	{% endblock %}

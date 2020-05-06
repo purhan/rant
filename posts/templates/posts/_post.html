@@ -1,23 +1,18 @@
 <div class="post media">
-	<div class="list-unstyled">
+	<div class="mx-auto list-unstyled">
 		<h4 class="media-heading">{{ post.message_html|safe }}</h4>
-		{% comment %} <strong>{{ post.user.username }}</strong> {% endcomment %}
-		<h5><span class="username"><a href="{% url 'posts:for_user' username=post.user.username %}">@{{ post.user.username }}</a></span></h5>
-		<time class="time"><a href="{% url 'posts:single' username=post.user.username pk=post.pk %}">{{ post.created_at }}</a></time>
+		<h5><span class="media-body username"><a href="{% url 'posts:for_user' username=post.user.username %}">@{{ post.user.username }}</a></span></h5>
+		<time class="time"><a>{{ post.created_at }}</a></time>
 		{% if post.group %}
-		<span class="group-name">in <a href="#">{{ post.group.name }}</a></span>
+		<span class="group-name">in <a>{{ post.group.name }}</a></span>
 		{% endif %}
+	</div>
 
-
-
-
-		<div class="media-body">
+	<div class="media-body">
 			{% if user.is_authenticated and post.user == user and not hide_delete %}
-				<a href="{% url 'posts:delete' pk=post.pk %}" title="delete" class="btn btn-simple">
-					<span class="glyphicon glyphicon-remove text-danger" aria-hidden="true"></span>
-					<span class="btn btn-danger icon-label">Delete</span>
+				<a href="{% url 'posts:delete' pk=post.pk %}" title="delete">
+					<span class="badge badge-danger badge-pill">Delete</span>
 				</a>
 			{% endif %}
-		</div>
 	</div>
 </div>

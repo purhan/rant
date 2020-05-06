@@ -1,6 +1,7 @@
 {% extends "posts/post_base.html" %}
 
 {% block prepost %}
+
 <div class="col-md-4">
 	<h1>@{{ post_user.username }}</h1>
 	<p>Post History</p>
@@ -8,9 +9,12 @@
 {% endblock %}
 
 {% block post_content %}
-<div class="col-md-8">
+<ul class="mx-auto list-group">
 	{% for post in post_list %}
+<div class="list-group-item">
 		{% include "posts/_post.html" %}
-	{% endfor %}
 </div>
+	{% endfor %}
+</ul>
+
 {% endblock %}
